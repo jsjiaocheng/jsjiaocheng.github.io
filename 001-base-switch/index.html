@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta charset="UTF-8">
+<title>js切换演示</title>
+
+</head>
+<body>
+
+
+<div class="ke-switch">
+	<div class="ke-switch-title">
+		<a class="item" href="#">切换1</a>
+		<a class="item" href="#">切换2</a>
+		<a  href="#">more</a>
+	</div>
+
+	<div class="ke-switch-con">
+		<div class="item">
+			内容1
+		</ul>
+
+		<div
+			class="item">
+			内容2
+		</ul>
+
+	</div>
+</div>
+
+
+
+<script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(function () {
+		$(".ke-switch").each(function (n) {
+
+			$(this).find('.ke-switch-title .item').eq(0).addClass('hover');
+			$(this).find('.ke-switch-con .item').hide().eq(0).addClass('hover').show();
+
+			$(".ke-switch").eq(n).find('.ke-switch-title .item').each(function (m) {
+				$(this).hover(function () {
+					$(".ke-switch").eq(n).find('.ke-switch-title .item').removeClass('hover').eq(m).addClass('hover');
+					$(".ke-switch").eq(n).find('.ke-switch-con .item').hide().eq(m).show();
+					});
+				});
+
+			});
+		});
+
+</script>
+
+
+</body>
+</html>
